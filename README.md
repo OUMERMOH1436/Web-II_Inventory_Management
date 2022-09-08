@@ -1,0 +1,2 @@
+# Web-II_Inventory_Management
+Inventory SaaS, is an ASP.NET Core web application, which will help manage a company stock and inventory management. It also equipped with additional important feature to help day to day business operation such as: purchase cycle, sales cycle, merchandise and inventory. Not only that, our SaaS edition equipped with most requested feature that is: Multitenant capability. With multitenant capability, one single instance can host multi company or multi-tenant with isolated data from each other.
