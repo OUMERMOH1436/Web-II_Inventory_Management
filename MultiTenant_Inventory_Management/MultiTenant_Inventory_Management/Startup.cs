@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using MultiTenant_Inventory_Management.Areas.Identity.Data;
 using MultiTenant_Inventory_Management.Data;
 using System;
 using System.Collections.Generic;
@@ -32,9 +33,13 @@ namespace MultiTenant_Inventory_Management
                     Configuration.GetConnectionString("DefaultConnection")));
             services.AddDatabaseDeveloperPageExceptionFilter();
 
-            services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-                .AddEntityFrameworkStores<ApplicationDbContext>();
+              services.AddDefaultIdentity<SaasUser>(options => options.SignIn.RequireConfirmedAccount = true)
+               .AddEntityFrameworkStores<ApplicationDbContext>();
+           // services.AddIdentity<SaasUser, IdentityRole>()
+             //   .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews();
+            services.AddRazorPages();
+
             
         }
 
