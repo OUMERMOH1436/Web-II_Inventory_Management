@@ -15,7 +15,9 @@ namespace MultiTenant_Inventory_Management.Areas.Identity.Data
             [Required]
             [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at most {1} characters.", MinimumLength = 2)]
             public string LastName { get; set; }
-            public string DisplayName { get; set; }
+        [Required]
+        [Display(Name = "Username")]
+        public string DisplayName { get; set; }
             public byte[] ImageData { get; set; }
             public string ContentType { get; set; }
             public string FullName

@@ -33,7 +33,7 @@ namespace MultiTenant_Inventory_Management
                     Configuration.GetConnectionString("DefaultConnection")));
             services.AddDatabaseDeveloperPageExceptionFilter();
 
-              services.AddDefaultIdentity<SaasUser>(options => options.SignIn.RequireConfirmedAccount = true)
+              services.AddDefaultIdentity<SaasUser>(options => options.SignIn.RequireConfirmedAccount = false)
                .AddEntityFrameworkStores<ApplicationDbContext>();
            // services.AddIdentity<SaasUser, IdentityRole>()
              //   .AddEntityFrameworkStores<ApplicationDbContext>();
