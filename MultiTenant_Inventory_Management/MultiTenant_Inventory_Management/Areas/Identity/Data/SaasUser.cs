@@ -9,24 +9,33 @@ namespace MultiTenant_Inventory_Management.Areas.Identity.Data
 {
         public class SaasUser : IdentityUser
         {
-            [Required]
-            [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at most {1} characters.", MinimumLength = 2)]
-            public string FirstName { get; set; }
-            [Required]
-            [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at most {1} characters.", MinimumLength = 2)]
-            public string LastName { get; set; }
+        [Required]
+        [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at most {1} characters.", MinimumLength = 2)]
+        public string FirstName { get; set; }
+        [Required]
+        [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at most {1} characters.", MinimumLength = 2)]
+        public string LastName { get; set; }
         [Required]
         [Display(Name = "Username")]
         public string DisplayName { get; set; }
-            public byte[] ImageData { get; set; }
-            public string ContentType { get; set; }
-            public string FullName
+        public byte[] ImageData { get; set; }
+        public string ContentType { get; set; }
+        public DateTime registeredDate { get; set; }
+        public bool passwordchangerequired { get; set; }
+        public DateTime passwordChangedDate { get; set; }
+        public string secondaryEmail { get; set; }
+        public bool isActive { get; set; }
+        public bool isTenant { get; set; }
+        public string role { get; set; }
+
+        public string FullName
+        {
+            get
             {
-                get
-                {
-                    return $"{FirstName} {LastName}";
-                }
+                return $"{FirstName} {LastName}";
             }
+        }
+            
 
         }
 }
