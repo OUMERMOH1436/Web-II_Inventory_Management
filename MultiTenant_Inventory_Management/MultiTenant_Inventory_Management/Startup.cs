@@ -9,6 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using MultiTenant_Inventory_Management.Areas.Identity.Data;
 using MultiTenant_Inventory_Management.Data;
+using MultiTenant_Inventory_Management.Models.Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,9 +29,22 @@ namespace MultiTenant_Inventory_Management
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<ApplicationDbContext>(options =>
+            services.AddDbContext<ApplicationDbContext>(
+                options =>                
                 options.UseSqlServer(
-                    Configuration.GetConnectionString("DefaultConnection")));
+                    Configuration.GetConnectionString("DefaultConnection"))
+               );
+
+            services.AddDbContext<BusinessDbContext>(
+                options =>
+                options.UseSqlServer(
+                    Configuration.GetConnectionString("DefaultConnection"))
+                );
+
+
+            services.AddTransient<ITenantService, TenantService>();
+            services.AddTransient<IProductService, ProductService>();
+
             services.AddDatabaseDeveloperPageExceptionFilter();
 
               services.AddDefaultIdentity<SaasUser>(options => options.SignIn.RequireConfirmedAccount = false)
