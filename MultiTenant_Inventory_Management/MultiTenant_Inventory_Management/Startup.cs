@@ -34,7 +34,7 @@ namespace MultiTenant_Inventory_Management
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection"))
                );
-
+            
             services.AddDbContext<BusinessDbContext>(
                 options =>
                 options.UseSqlServer(

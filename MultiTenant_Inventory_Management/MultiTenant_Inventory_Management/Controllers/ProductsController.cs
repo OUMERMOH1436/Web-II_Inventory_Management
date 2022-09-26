@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using MultiTenant_Inventory_Management.Models.Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,12 +8,19 @@ using System.Threading.Tasks;
 
 namespace MultiTenant_Inventory_Management.Controllers
 {
+    // Nothing complicated here. Just a simple controller that uses the IProductService
     public class ProductsController : Controller
     {
-        // GET: ProductsController
-        public ActionResult Index()
+        private readonly IProductService _service;
+        public ProductsController(IProductService service)
         {
-            return View();
+            _service = service;
+        }
+        // GET: ProductsController
+        public async Task<ActionResult> Index()
+        {
+            var data = await _service.GetAllAsync();
+            return View(data);
         }
 
         // GET: ProductsController/Details/5

@@ -33,7 +33,7 @@ namespace MultiTenant_Inventory_Management.Models.Service
             return product;
         }
 
-        public async Task<IReadOnlyList<Product>> GetAllAsync()
+        public async Task<IEnumerable<Product>> GetAllAsync()
         {
             return await _context.Products.ToListAsync();
         }

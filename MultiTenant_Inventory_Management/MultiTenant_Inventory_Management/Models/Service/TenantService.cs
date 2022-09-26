@@ -16,8 +16,11 @@ namespace MultiTenant_Inventory_Management.Models.Service
         private HttpContext _httpContext;
         private Tenant _currentTenant;
         private string _currentUser;
-        public TenantService(IOptions<TenantSettings> tenantSettings, IHttpContextAccessor contextAccessor)
+
+        public TenantService(IOptions<TenantSettings> tenantSettings, IHttpContextAccessor contextAccessor,
+            ApplicationDbContext context)
         {
+            _context = context;
             _tenantSettings = tenantSettings.Value;
             _httpContext = contextAccessor.HttpContext;
 
@@ -27,9 +30,11 @@ namespace MultiTenant_Inventory_Management.Models.Service
             // if a tenant value is found, we set the tenant using the SetTenant(string tenantId) method
             if (_httpContext != null)
             {
-                if (_httpContext.Request.Headers.TryGetValue("tenant", out var TenantId))
+                //if (_httpContext.Request.Headers.TryGetValue("tenants", out var TenantId))
+                if(true)
                 {
-                    SetTenant(TenantId);                    
+                    SetTenant("3");
+                    //SetTenant(TenantId);                    
                 }
                 else
                 {
@@ -47,11 +52,12 @@ namespace MultiTenant_Inventory_Management.Models.Service
             // connection string property of the current tenant, as simple as that.
 
             int tid = Int32.Parse(tenantId);
-            _currentTenant = _tenantSettings.Tenants.Where(a => a.TenantId == tid).FirstOrDefault();
+            // _currentTenant = _tenantSettings.Tenants.Where(a => a.TenantId == tid).FirstOrDefault();
+            _currentTenant = _context.Tenants.Find(3);
             if (_currentTenant == null) throw new Exception("Invalid Tenant!");
             if (string.IsNullOrEmpty(_currentTenant.ConnectionString))
             {
-                SetDefaultConnectionStringToCurrentTenant();
+               // SetDefaultConnectionStringToCurrentTenant();
             }
 
         }

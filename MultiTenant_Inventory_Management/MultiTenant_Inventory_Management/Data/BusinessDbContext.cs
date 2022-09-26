@@ -18,7 +18,8 @@ namespace MultiTenant_Inventory_Management.Data
             : base(options)
         {
             _tenantService = tenantService;
-            TenantId = _tenantService.GetTenant().TenantId;
+            TenantId = 3;
+           // TenantId = _tenantService.GetTenant().TenantId;
         }
         public DbSet<Product> Products { get; set; }
 
