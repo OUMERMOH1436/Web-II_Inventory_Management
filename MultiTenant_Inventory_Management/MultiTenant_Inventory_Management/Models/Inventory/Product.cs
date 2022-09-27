@@ -16,7 +16,7 @@ namespace MultiTenant_Inventory_Management.Models.Inventory
             Description = description;
             Rate = rate;
         }
-        protected Product()
+        public Product()
         {
 
         }

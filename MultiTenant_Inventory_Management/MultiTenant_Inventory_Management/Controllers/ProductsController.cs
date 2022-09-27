@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using MultiTenant_Inventory_Management.Models.Inventory;
 using MultiTenant_Inventory_Management.Models.Service;
 using System;
 using System.Collections.Generic;
@@ -37,12 +39,12 @@ namespace MultiTenant_Inventory_Management.Controllers
 
         // POST: ProductsController/Create
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public async Task<ActionResult> Create(Product product)
         {
             try
             {
-                return RedirectToAction(nameof(Index));
+                var data =  await _service.CreateAsync(product.Name,product.Description,product.Rate);
+                return RedirectToAction("Index","Products");
             }
             catch
             {
