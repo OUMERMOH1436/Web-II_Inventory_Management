@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using MultiTenant_Inventory_Management.Models.Inventory;
@@ -11,6 +12,7 @@ using System.Threading.Tasks;
 namespace MultiTenant_Inventory_Management.Controllers
 {
     // Nothing complicated here. Just a simple controller that uses the IProductService
+    [Authorize]
     public class ProductsController : Controller
     {
         private readonly IProductService _service;

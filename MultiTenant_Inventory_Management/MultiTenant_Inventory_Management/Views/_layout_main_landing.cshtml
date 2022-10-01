@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    @await Html.PartialAsync("~/Views/Shared/_title_meta.cshtml")
+    @RenderSection("styles", required: false)
+    @await Html.PartialAsync("~/Views/Shared/_head_css.cshtml")
+
+</head>
+
+<body data-spy="scroll" data-target="#topnav-menu" data-offset="60">
+
+    @RenderBody()
+
+
+    <!-- Footer start -->
+    <footer class="landing-footer">
+        <div class="container">
+            <div class="row">
+            </div>
+            <!-- end row -->
+            <hr class="footer-border my-5">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="mb-4">
+                        <img src="~/assets/images/logo-light.png" alt="" height="20">
+                    </div>
+                    ©
+                    <script>document.write(new Date().getFullYear())</script> -
+                    Web II Project -- All Rights Reserved.
+                </div>
+
+            </div>
+        </div>
+        <!-- end container -->
+    </footer>
+    <!-- Footer end -->
+
+    @RenderSection("scripts", required: false)
+
+</body>
+
+</html>

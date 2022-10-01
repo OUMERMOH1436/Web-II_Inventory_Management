@@ -11,7 +11,8 @@ namespace MultiTenant_Inventory_Management.Models.Service
         public string GetDatabaseProvider();
         public string GetConnectionString();
         public Tenant GetTenant();
-         string Add(Tenant tenant);
-         string Update(Tenant tenant);
+        public List<Tenant> GetTenants(String UserId);
+        public Tenant Add(Tenant tenant);
+        public Tenant Update(Tenant tenant);
     }
 }

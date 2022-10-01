@@ -83,7 +83,7 @@ namespace MultiTenant_Inventory_Management
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Landing}/{action=Index}/{id?}");
                 endpoints.MapRazorPages();
             });
         }

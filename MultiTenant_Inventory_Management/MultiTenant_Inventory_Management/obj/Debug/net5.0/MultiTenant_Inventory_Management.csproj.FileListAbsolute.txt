@@ -476,6 +476,13 @@ D:\Storages\Desktop\Term Project\Web-II_Inventory_Management\MultiTenant_Invento
 D:\Storages\Desktop\Term Project\Web-II_Inventory_Management\MultiTenant_Inventory_Management\MultiTenant_Inventory_Management\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 D:\Storages\Desktop\Term Project\Web-II_Inventory_Management\MultiTenant_Inventory_Management\MultiTenant_Inventory_Management\bin\Debug\net5.0\Castle.Core.dll
 D:\Storages\Desktop\Term Project\Web-II_Inventory_Management\MultiTenant_Inventory_Management\MultiTenant_Inventory_Management\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Proxies.dll
-D:\Storages\Desktop\Term Project\Web-II_Inventory_Management\MultiTenant_Inventory_Management\MultiTenant_Inventory_Management\obj\Debug\net5.0\MultiTenant_Inventory_Management.csproj.AssemblyReference.cache
 D:\Storages\Desktop\Term Project\Web-II_Inventory_Management\MultiTenant_Inventory_Management\MultiTenant_Inventory_Management\obj\Debug\net5.0\Razor\Views\Products\Index.cshtml.g.cs
 D:\Storages\Desktop\Term Project\Web-II_Inventory_Management\MultiTenant_Inventory_Management\MultiTenant_Inventory_Management\obj\Debug\net5.0\Razor\Views\Products\Create.cshtml.g.cs
+D:\Storages\Desktop\Term Project\Web-II_Inventory_Management\MultiTenant_Inventory_Management\MultiTenant_Inventory_Management\obj\Debug\net5.0\Razor\Views\AvailableTenant\Index.cshtml.g.cs
+D:\Storages\Desktop\Term Project\Web-II_Inventory_Management\MultiTenant_Inventory_Management\MultiTenant_Inventory_Management\obj\Debug\net5.0\MultiTenant_Inventory_Management.csproj.AssemblyReference.cache
+D:\Storages\Desktop\Term Project\Web-II_Inventory_Management\MultiTenant_Inventory_Management\MultiTenant_Inventory_Management\obj\Debug\net5.0\Razor\Views\Tenants\Create.cshtml.g.cs
+D:\Storages\Desktop\Term Project\Web-II_Inventory_Management\MultiTenant_Inventory_Management\MultiTenant_Inventory_Management\obj\Debug\net5.0\Razor\Views\Tenants\Invite.cshtml.g.cs
+D:\Storages\Desktop\Term Project\Web-II_Inventory_Management\MultiTenant_Inventory_Management\MultiTenant_Inventory_Management\obj\Debug\net5.0\Razor\Views\Shared\_head_css.cshtml.g.cs
+D:\Storages\Desktop\Term Project\Web-II_Inventory_Management\MultiTenant_Inventory_Management\MultiTenant_Inventory_Management\obj\Debug\net5.0\Razor\Views\Shared\_title_meta.cshtml.g.cs
+D:\Storages\Desktop\Term Project\Web-II_Inventory_Management\MultiTenant_Inventory_Management\MultiTenant_Inventory_Management\obj\Debug\net5.0\Razor\Views\_layout_main_landing.cshtml.g.cs
+D:\Storages\Desktop\Term Project\Web-II_Inventory_Management\MultiTenant_Inventory_Management\MultiTenant_Inventory_Management\obj\Debug\net5.0\Razor\Views\Landing\Index.cshtml.g.cs

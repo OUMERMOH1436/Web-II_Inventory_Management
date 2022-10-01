@@ -10,8 +10,9 @@ namespace MultiTenant_Inventory_Management.Controllers
     public class AccountController : Controller
     {
         [HttpPost]
-        public ViewResult Register()
+        public ViewResult Login()
         {
+            ViewBag.login = "";
             return View();
         }
     }

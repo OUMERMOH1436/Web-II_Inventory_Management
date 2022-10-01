@@ -82,7 +82,7 @@ namespace MultiTenant_Inventory_Management.Areas.Identity.Pages.Account
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             if (ModelState.IsValid)
             {
-                var user = new SaasUser { FirstName = Input.FirstName, LastName = Input.LastName,DisplayName = Input.DisplayName, UserName = Input.DisplayName, Email = Input.Email };
+                var user = new SaasUser { FirstName = Input.FirstName, LastName = Input.LastName,DisplayName = Input.DisplayName, UserName = Input.Email, Email = Input.Email };
                 var result = await _userManager.CreateAsync(user, Input.Password);
                 if (result.Succeeded)
                 {

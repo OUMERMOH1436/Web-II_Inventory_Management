@@ -1,0 +1,117 @@
+﻿@model MultiTenant_Inventory_Management.Models.Inventory.Tenant
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Tenant</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="UserId" class="control-label"></label>
+                <select asp-for="UserId" class ="form-control" asp-items="ViewBag.UserId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="TenantName" class="control-label"></label>
+                <input asp-for="TenantName" class="form-control" />
+                <span asp-validation-for="TenantName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Industry" class="control-label"></label>
+                <input asp-for="Industry" class="form-control" />
+                <span asp-validation-for="Industry" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BusinessLocation" class="control-label"></label>
+                <input asp-for="BusinessLocation" class="form-control" />
+                <span asp-validation-for="BusinessLocation" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StateOrProvince" class="control-label"></label>
+                <input asp-for="StateOrProvince" class="form-control" />
+                <span asp-validation-for="StateOrProvince" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Logo" class="control-label"></label>
+                <input asp-for="Logo" class="form-control" />
+                <span asp-validation-for="Logo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PrimaryContactName" class="control-label"></label>
+                <input asp-for="PrimaryContactName" class="form-control" />
+                <span asp-validation-for="PrimaryContactName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PrimaryContactEmail" class="control-label"></label>
+                <input asp-for="PrimaryContactEmail" class="form-control" />
+                <span asp-validation-for="PrimaryContactEmail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PrimaryContactPhone" class="control-label"></label>
+                <input asp-for="PrimaryContactPhone" class="form-control" />
+                <span asp-validation-for="PrimaryContactPhone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Currency" class="control-label"></label>
+                <input asp-for="Currency" class="form-control" />
+                <span asp-validation-for="Currency" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Language" class="control-label"></label>
+                <input asp-for="Language" class="form-control" />
+                <span asp-validation-for="Language" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TimeZone" class="control-label"></label>
+                <input asp-for="TimeZone" class="form-control" />
+                <span asp-validation-for="TimeZone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="InventoryStartDate" class="control-label"></label>
+                <input asp-for="InventoryStartDate" class="form-control" />
+                <span asp-validation-for="InventoryStartDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FiscalYear" class="control-label"></label>
+                <input asp-for="FiscalYear" class="form-control" />
+                <span asp-validation-for="FiscalYear" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RegisteredDate" class="control-label"></label>
+                <input asp-for="RegisteredDate" class="form-control" />
+                <span asp-validation-for="RegisteredDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateFormat" class="control-label"></label>
+                <input asp-for="DateFormat" class="form-control" />
+                <span asp-validation-for="DateFormat" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="IsTenantActive" /> @Html.DisplayNameFor(model => model.IsTenantActive)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="ConnectionString" class="control-label"></label>
+                <input asp-for="ConnectionString" class="form-control" />
+                <span asp-validation-for="ConnectionString" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

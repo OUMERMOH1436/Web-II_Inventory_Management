@@ -1,0 +1,113 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/_layout_main_landing.cshtml";
+}
+@using Microsoft.AspNetCore.Identity
+@using MultiTenant_Inventory_Management.Areas.Identity.Data
+@inject SignInManager<SaasUser> SignInManager
+@inject UserManager<SaasUser> UserManager
+
+<!-- owl.carousel css -->
+<link rel="stylesheet" href="~/assets/libs/owl.carousel/assets/owl.carousel.min.css">
+
+<link rel="stylesheet" href="~/assets/libs/owl.carousel/assets/owl.theme.default.min.css">
+
+
+<nav class="bg-white navbar navbar-expand-lg navigation fixed-top sticky">
+    <div class="container">
+        <a class="navbar-logo" href=@Url.Action("Home","index")>
+            <img src="~/assets/images/saas.png" alt="" height="19" class="logo logo-dark">
+            <img src="~/assets/images/saas.png" alt="" height="19" class="logo logo-light">
+        </a>
+
+        <button type="button" class="btn btn-sm px-3 font-size-16 d-lg-none header-item waves-effect waves-light" data-toggle="collapse" data-target="#topnav-menu-content">
+            <i class="fa fa-fw fa-bars"></i>
+        </button>
+
+        <div class="collapse navbar-collapse" id="topnav-menu-content">
+
+            <ul class="navbar-nav ml-auto" id="topnav-menu">
+
+                <li class="nav-item">
+                    <a class="text-dark nav-link active" href="#customers">Customers</a>
+                </li>
+                <li class="nav-item">
+                    <a class="text-dark nav-link" href="#support">Support</a>
+                </li>
+                <li class="nav-item">
+                    <a class="text-dark nav-link" href="#features">Features</a>
+                </li>
+            </ul>
+            @if (SignInManager.IsSignedIn(User))
+            {
+                <div class="ml-lg-2">
+                    <a href=@Url.Action("index", "Home") class="btn btn-outline-success w-xs">Access your apps</a>
+                </div>
+            }
+            else
+            {
+                <div class="nav-item">
+                    <a class="nav-link text-dark btn btn-outline-success w-xs" asp-area="Identity" asp-page="/Account/Register">Sign up</a>
+                </div>
+                <div class="nav-item">
+                    <a class="nav-link text-dark btn btn-outline-success w-xs" asp-area="Identity" asp-page="/Account/Login">Login</a>
+                </div>
+            }
+        </div>
+    </div>
+</nav>
+
+
+
+
+
+
+
+
+
+<!-- hero section start -->
+<section class="section hero-section bg-ico-hero" id="home">
+    <div class="bg-overlay bg-soft-light"></div>
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-5">
+                <div class="text-black-50">
+                    <h1 class="text-dark font-weight-semibold mb-3 hero-title">Saas - Your Life's Work, Powered By Our Life's Work</h1>
+                    <p class="font-size-14">Unique and powerful suite of software to run your entire business, brought to you by a company with the long term vision to transform the way you work.</p>
+
+                    <div class="button-items mt-4">
+                        <a href=/Identity/Account/Register class="btn btn-success">Get Started for Free</a>
+                        <a href=@Url.Action("index","Home") class="btn btn-light">Login</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- area where the countdown was-->
+
+        
+        </div>
+        <!-- end row -->
+    </div>
+    <!-- end container -->
+</section>
+<!-- hero section end -->
+<!-- JAVASCRIPT -->
+<script src="~/assets/libs/jquery/jquery.min.js"></script>
+<script src="~/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="~/assets/libs/metismenu/metisMenu.min.js"></script>
+<script src="~/assets/libs/simplebar/simplebar.min.js"></script>
+<script src="~/assets/libs/node-waves/waves.min.js"></script>
+<script src="~/assets/js/lang/jquery.multiLanguage.js"></script>
+
+<script src="~/assets/libs/jquery.easing/jquery.easing.min.js"></script>
+
+<!-- Plugins js-->
+<script src="~/assets/libs/jquery-countdown/jquery.countdown.min.js"></script>
+
+<!-- owl.carousel js -->
+<script src="~/assets/libs/owl.carousel/owl.carousel.min.js"></script>
+
+<!-- ICO landing init -->
+<script src="~/assets/js/pages/ico-landing.init.js"></script>
+
+<script src="~/assets/js/app.js"></script>

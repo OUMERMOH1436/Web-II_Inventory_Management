@@ -18,8 +18,7 @@ namespace MultiTenant_Inventory_Management.Data
             : base(options)
         {
             _tenantService = tenantService;
-            TenantId = 3;
-           // TenantId = _tenantService.GetTenant().TenantId;
+            TenantId = _tenantService.GetTenant().TenantId;
         }
         public DbSet<Product> Products { get; set; }
 
@@ -29,6 +28,7 @@ namespace MultiTenant_Inventory_Management.Data
         // to the current tenant only.
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            
             base.OnModelCreating(modelBuilder);
            
             modelBuilder.Entity<Product>().HasQueryFilter(a => a.TenantId == TenantId);
@@ -38,8 +38,8 @@ namespace MultiTenant_Inventory_Management.Data
         // the tenantsettings and set to EFCore Context
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            var tenantConntectionString = _tenantService.GetConnectionString();// tenant connectionstring
-            if (!string.IsNullOrEmpty(tenantConntectionString))
+            var tenantConnectionString = _tenantService.GetConnectionString();// tenant connectionstring
+            if (!string.IsNullOrEmpty(tenantConnectionString))
             {
                 var DbProvider = _tenantService.GetDatabaseProvider(); // default connection string
                 if (DbProvider.ToLower() == "mssql")
@@ -60,6 +60,7 @@ namespace MultiTenant_Inventory_Management.Data
                 {
                     case EntityState.Added:
                     case EntityState.Modified:
+                    case EntityState.Deleted:
                         entry.Entity.TenantId = TenantId;
                         break;
 
