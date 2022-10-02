@@ -4,6 +4,7 @@ using MultiTenant_Inventory_Management.Models.Inventory;
 using MultiTenant_Inventory_Management.Models.Service;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -18,9 +19,28 @@ namespace MultiTenant_Inventory_Management.Data
             : base(options)
         {
             _tenantService = tenantService;
-            TenantId = _tenantService.GetTenant().TenantId;
+
+            try
+            {
+                var configFile = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+                var settings = configFile.AppSettings.Settings;
+                if (settings["TenantId"] == null)
+                {
+
+                }
+                else
+                {
+                    TenantId = _tenantService.GetTenant().TenantId;
+                }
+            }
+            catch (ConfigurationErrorsException)
+            {
+                Console.WriteLine("Error Reading appsettings");
+            }
         }
         public DbSet<Product> Products { get; set; }
+        public DbSet<Brand> Brand { get; set; }
+        public DbSet<ProductTax> ProductTax { get; set; }
 
         // this is part where we define the global query filter for DBContext.
         // Everytime a new request is passed to the Dbcontext,
@@ -32,6 +52,8 @@ namespace MultiTenant_Inventory_Management.Data
             base.OnModelCreating(modelBuilder);
            
             modelBuilder.Entity<Product>().HasQueryFilter(a => a.TenantId == TenantId);
+            modelBuilder.Entity<Brand>().HasQueryFilter(a => a.TenantId == TenantId);
+            modelBuilder.Entity<ProductTax>().HasQueryFilter(a => a.TenantId == TenantId);
         }
 
         // Here, everytime a new instance of BusinessDbContext is invoked, the connection string is pulled 

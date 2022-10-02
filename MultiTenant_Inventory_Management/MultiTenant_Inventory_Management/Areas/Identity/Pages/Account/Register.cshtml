@@ -3,48 +3,168 @@
 @{
     ViewData["Title"] = "Register";
 }
+@{ Layout = "~/Areas/Identity/Pages/_BlankLayout.cshtml"; }
 
-<h1>@ViewData["Title"]</h1>
+<div class="home-btn d-none d-sm-block">
+    <a asp-controller="Landing" asp-action="Index" class="text-dark"><i class="mdi mdi-home-variant h2"></i></a>
+</div>
 
-<div class="row">
-    <div class="col-md-4">
-        <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
-            <h4>Create a new account.</h4>
-            <hr />
-            <div asp-validation-summary="All" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Input.FirstName"></label>
-                <input asp-for="Input.FirstName" class="form-control" />
-                <span asp-validation-for="Input.FirstName" class="text-danger"></span>
+<div class="account-pages my-5 pt-sm-5">
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6 col-xl-5">
+                <div class="card overflow-hidden">
+                    <div class="bg-soft-primary">
+                        <div class="row">
+                            <div class="col-7">
+                                <div class="text-primary p-4">
+                                    <h5 class="text-primary">Free Register</h5>
+                                    <p>Get your free Saas account now.</p>
+                                </div>
+                            </div>
+                            <div class="col-5 align-self-end">
+                                <img src="~/assets/images/profile-img.png" alt="" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body pt-0">
+                        <div>
+                            <a asp-controller="Landing" asp-action="Index">
+                                <div class="avatar-md profile-user-wid mb-4">
+                                    <span class="avatar-title rounded-circle bg-light">
+                                        <img src="~/assets/images/saas.png" alt="" height="49" width="50" class="rounded-circle" >
+                                    </span>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="p-2">
+                            <form asp-route-returnUrl="@Model.Url.Action("index","Home")" method="post">
+                                <div asp-validation-summary="All" class="text-danger"></div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label asp-for="Input.FirstName">First Name</label>
+                                            <input asp-for="Input.FirstName" class="form-control" placeholder="Enter First Name" />
+                                            <span asp-validation-for="Input.FirstName" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label asp-for="Input.LastName">Last Name</label>
+                                            <input asp-for="Input.LastName" class="form-control" placeholder="Enter Last Name" />
+                                            <span asp-validation-for="Input.LastName" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="Input.Email">Email</label>
+                                    <input asp-for="Input.Email" class="form-control" placeholder="Enter email" />
+                                    <span asp-validation-for="Input.Email" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="Input.DisplayName">Display Name</label>
+                                    <input asp-for="Input.DisplayName" class="form-control" placeholder="Enter name you want as a Display" />
+                                    <span asp-validation-for="Input.DisplayName" class="text-danger"></span>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label asp-for="Input.Password">Password</label>
+                                            <input asp-for="Input.Password" class="form-control" placeholder="Enter password" />
+                                            <span asp-validation-for="Input.Password" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label asp-for="Input.ConfirmPassword"></label>
+                                            <input asp-for="Input.ConfirmPassword" class="form-control" placeholder="Confirm password" />
+                                            <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-block waves-effect waves-light">Register</button>
+
+                                <div class="mt-4 text-center">
+                                    <h5 class="font-size-14 mb-3">Sign up using</h5>
+                                    <ul class="list-inline">
+                                        <li class="list-inline-item">
+                                            <a href="javascript::void()" class="social-list-item bg-primary text-white border-primary">
+                                                <i class="mdi mdi-facebook"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a href="javascript::void()" class="social-list-item bg-info text-white border-info">
+                                                <i class="mdi mdi-twitter"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a href="javascript::void()" class="social-list-item bg-danger text-white border-danger">
+                                                <i class="mdi mdi-google"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="mt-4 text-center">
+                                    <p class="mb-0">By registering you agree to the Saas <a href="#" class="text-primary">Terms of Use</a></p>
+                                </div>
+
+                            </form>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="mt-5 text-center">
+
+                    <div>
+                        <p>Already have an account ? <a href="Login" class="font-weight-medium text-primary"> Login</a> </p>
+                        <p>
+                            ©
+                            <script>document.write(new Date().getFullYear())</script> -
+                            Web II Project -- All Rights Reserved.
+                        </p>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="Input.LastName"></label>
-                <input asp-for="Input.LastName" class="form-control" />
-                <span asp-validation-for="Input.LastName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Input.DisplayName"></label>
-                <input asp-for="Input.DisplayName" class="form-control" />
-                <span asp-validation-for="Input.DisplayName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Input.Email"></label>
-                <input asp-for="Input.Email" class="form-control" />
-                <span asp-validation-for="Input.Email" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Input.Password"></label>
-                <input asp-for="Input.Password" class="form-control" />
-                <span asp-validation-for="Input.Password" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Input.ConfirmPassword"></label>
-                <input asp-for="Input.ConfirmPassword" class="form-control" />
-                <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
-            </div>
-            <button type="submit" class="btn btn-primary">Register</button>
-        </form>
+        </div>
     </div>
+    @*
+        code commented below is here
+    *@
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*
     <div class="col-md-6 col-md-offset-2">
         <section>
             <h4>Use another service to register.</h4>
@@ -74,9 +194,5 @@
                 }
             }
         </section>
-    </div>
-</div>
-
-@section Scripts {
-    <partial name="_ValidationScriptsPartial" />
-}
+    </div> 
+    *@

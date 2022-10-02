@@ -45,7 +45,7 @@ namespace MultiTenant_Inventory_Management.Controllers
         {
             try
             {
-                var data =  await _service.CreateAsync(product.Name,product.Description,product.Rate);
+                var data =  await _service.CreateAsync(product);
                 return RedirectToAction("Index","Products");
             }
             catch

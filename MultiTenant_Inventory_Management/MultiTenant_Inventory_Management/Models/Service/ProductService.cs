@@ -17,9 +17,8 @@ namespace MultiTenant_Inventory_Management.Models.Service
         {
             _context = context;
         }
-        public async Task<Product> CreateAsync(string name, string description, int rate)
+        public async Task<Product> CreateAsync(Product product)
         {
-            var product = new Product(name, description, rate);
             _context.Products.Add(product);
             await _context.SaveChangesAsync();
             return product;

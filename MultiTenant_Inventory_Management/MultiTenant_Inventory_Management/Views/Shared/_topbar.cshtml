@@ -1,0 +1,258 @@
+﻿<header id="page-topbar">
+    <div class="navbar-header">
+        <div class="d-flex">
+            <!-- LOGO -->
+            <div class="navbar-brand-box">
+                <a href=@Url.Action("Index", "index") class="logo logo-dark">
+                    <span class="logo-sm">
+                        <img src="~/assets/images/logo.svg" alt="" height="22">
+                    </span>
+                    <span class="logo-lg">
+                        <img src="~/assets/images/logo-dark.png" alt="" height="17">
+                    </span>
+                </a>
+
+                <a href=@Url.Action("Index", "index") class="logo logo-light">
+                    <span class="logo-sm">
+                        <img src="~/assets/images/logo-light.svg" alt="" height="22">
+                    </span>
+                    <span class="logo-lg">
+                        <img src="~/assets/images/logo-light.png" alt="" height="19">
+                    </span>
+                </a>
+            </div>
+
+            <button type="button" class="btn btn-sm px-3 font-size-16 header-item waves-effect" id="vertical-menu-btn">
+                <i class="fa fa-fw fa-bars"></i>
+            </button>
+
+            <div class="dropdown dropdown-mega d-none d-lg-block ml-2">
+                <button type="button" class="btn header-item waves-effect" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
+                    <span key="t-megamenu">Quick Create</span>
+                    <i class="mdi mdi-chevron-down"></i>
+                </button>
+                <div class="dropdown-menu dropdown-megamenu">
+                    <div class="row">
+                        <div class="col-sm-8">
+
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <h5 class="font-size-14 mt-0" key="t-general">GENERAL</h5>
+                                    <ul class="list-unstyled megamenu-list">
+                                        <li>
+                                            <a href="javascript:void(0);" key="t-add-user">Add Users</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);" key="t-item">Item</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);" key="t-item-group">Item Group</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);" key="t-inventory-adjustments">Inventory Adjustement</a>
+                                        </li>
+
+                                    </ul>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <h5 class="font-size-14 mt-0" key="t-sales">SALES</h5>
+                                    <ul class="list-unstyled megamenu-list">
+                                        <li>
+                                            <a href="javascript:void(0);" key="t-customer">Customer</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);" key="t-invoices">Invoices</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);" key="t-sales-orders">Sales Order</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);" key="t-packages">Packages</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);" key="t-customer-payment">Customer Payment</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);" key="t-credit-notes">Credit Notes</a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <h5 class="font-size-14 mt-0" key="t-purchases">PURCHASES</h5>
+                                    <ul class="list-unstyled megamenu-list">
+                                        <li>
+                                            <a href="javascript:void(0);" key="t-vendor">Vendor</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);" key="t-bills">Bills</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);" key="t-purchase-orders">Purchase Orders</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);" key="t-vendor-payment">Vendor Payment</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0);" key="t-vendor-credit">Vendor Credit</a>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+
+            <!-- App Search-->
+            <form class="app-search d-none d-lg-block">
+                <div class="position-relative">
+                    <input type="text" class="form-control" placeholder="Search...">
+                    <span class="bx bx-search-alt"></span>
+                </div>
+            </form>
+           @*  <div> <partial name="_LoginPartial.cshtml" /></div> *@
+
+        </div>
+
+        <div class="d-flex">
+
+            <div class="dropdown d-inline-block d-lg-none ml-2">
+                <button type="button" class="btn header-item noti-icon waves-effect" id="page-header-search-dropdown"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="mdi mdi-magnify"></i>
+                </button>
+                <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right p-0"
+                     aria-labelledby="page-header-search-dropdown">
+
+                    <form class="p-3">
+                        <div class="form-group m-0">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Search ..." aria-label="Recipient's username">
+                                <div class="input-group-append">
+                                    <button class="btn btn-primary" type="submit"><i class="mdi mdi-magnify"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="dropdown d-inline-block">
+                <button type="button" class="btn header-item waves-effect"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img id="header-lang-img" src="~/assets/images/flags/us.jpg" alt="Header Language" height="16">
+                </button>
+                <div class="dropdown-menu dropdown-menu-right">
+
+                    <!-- item-->
+                    <a href="javascript:void(0);" class="dropdown-item notify-item" onclick="setLanguage('en')">
+                        <img src="~/assets/images/flags/us.jpg" alt="user-image" class="mr-1" height="12" asp-append-version="true"> <span class="align-middle">English</span>
+                    </a>
+                    <!-- item-->
+                    <a href="javascript:void(0);" class="dropdown-item notify-item" onclick="setLanguage('sp')">
+                        <img src="~/assets/images/flags/spain.jpg" alt="user-image" class="mr-1" height="12" asp-append-version="true"> <span class="align-middle">Spanish</span>
+                    </a>
+
+                    <!-- item-->
+                    <a href="javascript:void(0);" class="dropdown-item notify-item" onclick="setLanguage('gr')">
+                        <img src="~/assets/images/flags/germany.jpg" alt="user-image" class="mr-1" height="12"> <span class="align-middle">German</span>
+                    </a>
+
+                    <!-- item-->
+                    <a href="javascript:void(0);" class="dropdown-item notify-item" onclick="setLanguage('it')">
+                        <img src="~/assets/images/flags/italy.jpg" alt="user-image" class="mr-1" height="12"> <span class="align-middle">Italian</span>
+                    </a>
+
+                    <!-- item-->
+                    <a href="javascript:void(0);" class="dropdown-item notify-item" onclick="setLanguage('ru')">
+                        <img src="~/assets/images/flags/russia.jpg" alt="user-image" class="mr-1" height="12"> <span class="align-middle">Russian</span>
+                    </a>
+                    <!-- item-->
+                    <a href="javascript:void(0);" class="dropdown-item notify-item" onclick="setLanguage('amh')">
+                        <img src="~/assets/images/flags/Ethiopian.jpg" alt="user-image" class="mr-1" height="12"> <span class="align-middle">Amharic</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="dropdown d-none d-lg-inline-block ml-1">
+                <button type="button" class="btn header-item noti-icon waves-effect"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="bx bx-customize"></i>
+                </button>
+            </div>
+
+            <div class="dropdown d-none d-lg-inline-block ml-1">
+                <button type="button" class="btn header-item noti-icon waves-effect" data-toggle="fullscreen">
+                    <i class="bx bx-fullscreen"></i>
+                </button>
+            </div>
+
+            <div class="dropdown d-inline-block">
+                <button type="button" class="btn header-item noti-icon waves-effect" id="page-header-notifications-dropdown"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="bx bx-bell bx-tada"></i>
+                    <span class="badge badge-danger badge-pill">3</span>
+                </button>
+                <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right p-0"
+                     aria-labelledby="page-header-notifications-dropdown">
+                    <div class="p-3">
+                        <div class="row align-items-center">
+                            <div class="col">
+                                <h6 class="m-0" key="t-notifications"> Notifications </h6>
+                            </div>
+                            <div class="col-auto">
+                                <a href="#!" class="small" key="t-view-all"> View All</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-2 border-top">
+                        <a class="btn btn-sm btn-link font-size-14 btn-block text-center" href="javascript:void(0)">
+                            <i class="mdi mdi-arrow-right-circle mr-1"></i> View More..
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dropdown d-inline-block">
+                <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img class="rounded-circle header-profile-user" src="~/assets/images/users/Oumer.jpg" asp-append-version="true"
+                         alt="Header Avatar">
+                    <span class="d-none d-xl-inline-block ml-1" key="t-oumer">Oumer</span>
+                    <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
+                </button>
+                <div class="dropdown-menu dropdown-menu-right">
+                    <!-- item-->
+                    <a class="dropdown-item" href="#"><i class="bx bx-user font-size-16 align-middle mr-1"></i> <span key="t-profile">Profile</span></a>
+                    <a class="dropdown-item" href="#"><i class="bx bx-wallet font-size-16 align-middle mr-1"></i> <span key="t-my-wallet">My Wallet</span></a>
+                    <a class="dropdown-item d-block" href="#"><span class="badge badge-success float-right">11</span><i class="bx bx-wrench font-size-16 align-middle mr-1"></i> <span key="t-settings">Settings</span></a>
+                    <a class="dropdown-item" href="#" ><i class="bx bx-lock-open font-size-16 align-middle mr-1"></i> <span key="t-lock-screen">Lock screen</span></a>
+                    
+                    
+                    <div class="dropdown-divider"></div>
+
+                    <form style="cursor:pointer" class="dropdown-item text-danger" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/Home", new { area = "" })" method="post">
+                        <a onclick="this.parentNode.submit();" class="dropdown-item text-danger">
+                            <i class="bx bx-power-off font-size-16 align-middle mr-1 text-danger"></i>
+                            <span key="t-logout">Logout</span>
+                        </a>
+                        </form>
+</div>
+            </div>
+
+            <div class="dropdown d-inline-block">
+                <button type="button" class="btn header-item noti-icon right-bar-toggle waves-effect">
+                    <i class="bx bx-cog bx-spin"></i>
+                </button>
+            </div>
+
+        </div>
+    </div>
+</header>

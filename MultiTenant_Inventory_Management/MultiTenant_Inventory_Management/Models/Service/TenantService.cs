@@ -43,21 +43,26 @@ namespace MultiTenant_Inventory_Management.Models.Service
             {
                 var configFile = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
                 var settings = configFile.AppSettings.Settings;
-                id = settings["TenantId"].Value;
+                if (settings["TenantId"] == null)
+                {
+
+                }
+                else
+                {
+                    id = settings["TenantId"].Value;
+                    int tid = Int32.Parse(id);
+                    _currentTenant = _context.Tenants.Find(tid);
+                    if (_currentTenant == null) throw new Exception("Invalid Tenant!");
+                    if (string.IsNullOrEmpty(_currentTenant.ConnectionString))
+                    {
+                        // SetDefaultConnectionStringToCurrentTenant();
+                    }
+                }
             }
             catch (ConfigurationErrorsException)
             {
                 Console.WriteLine("Error Reading appsettings");
             }
-
-            int tid = Int32.Parse(id);
-            _currentTenant = _context.Tenants.Find(tid);
-            if (_currentTenant == null) throw new Exception("Invalid Tenant!");
-            if (string.IsNullOrEmpty(_currentTenant.ConnectionString))
-            {
-               // SetDefaultConnectionStringToCurrentTenant();
-            }
-
         }
         private void SetDefaultConnectionStringToCurrentTenant()
         {

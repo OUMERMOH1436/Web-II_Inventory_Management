@@ -18,6 +18,8 @@ function setLanguage(lang) {
     }
     else if(lang=='ru') {
         document.getElementById("header-lang-img").src="assets/images/flags/russia.jpg";
+    } else if (lang == 'amh') {
+        document.getElementById("header-lang-img").src = "assets/images/flags/Ethiopian.jpg";
     }
     localStorage.setItem('language', lang);
     language = localStorage.getItem('language');
