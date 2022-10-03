@@ -27,6 +27,11 @@ namespace MultiTenant_Inventory_Management.Models.Service
         public async Task<Product> DeleteByIdAsync(int id)
         {
             var product = await _context.Products.FindAsync(id);
+
+            return await DeleteProducAsync(product);
+        }
+        public async Task<Product> DeleteProducAsync(Product product)
+        {
             _context.Products.Remove(product);
             await _context.SaveChangesAsync();
             return product;
@@ -37,10 +42,16 @@ namespace MultiTenant_Inventory_Management.Models.Service
             return await _context.Products.ToListAsync();
         }
 
-        public async Task<Product> GetByIdAsync(int id)
+        public Product GetByIdAsync(int id)
         {
-            return await _context.Products.FindAsync(id);
+            return _context.Products.Find(id);
         }
 
+        public async Task<Product> UpdateAsync(Product product)
+        {
+            _context.Products.Update(product);
+            await _context.SaveChangesAsync();
+            return product;
+        }
     }
 }

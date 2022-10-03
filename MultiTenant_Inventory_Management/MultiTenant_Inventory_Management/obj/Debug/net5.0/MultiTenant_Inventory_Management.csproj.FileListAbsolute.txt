@@ -489,3 +489,10 @@ D:\Storages\Desktop\Term Project\Web-II_Inventory_Management\MultiTenant_Invento
 D:\Storages\Desktop\Term Project\Web-II_Inventory_Management\MultiTenant_Inventory_Management\MultiTenant_Inventory_Management\obj\Debug\net5.0\Razor\Views\Shared\_page_title.cshtml.g.cs
 D:\Storages\Desktop\Term Project\Web-II_Inventory_Management\MultiTenant_Inventory_Management\MultiTenant_Inventory_Management\obj\Debug\net5.0\Razor\Views\Shared\_sidebar.cshtml.g.cs
 D:\Storages\Desktop\Term Project\Web-II_Inventory_Management\MultiTenant_Inventory_Management\MultiTenant_Inventory_Management\obj\Debug\net5.0\Razor\Views\Shared\_topbar.cshtml.g.cs
+D:\Storages\Desktop\Term Project\Web-II_Inventory_Management\MultiTenant_Inventory_Management\MultiTenant_Inventory_Management\obj\Debug\net5.0\MultiTenant_Inventory_Management.csproj.AssemblyReference.cache
+D:\Storages\Desktop\Term Project\Web-II_Inventory_Management\MultiTenant_Inventory_Management\MultiTenant_Inventory_Management\obj\Debug\net5.0\Razor\Views\Products\Create.cshtml.g.cs
+D:\Storages\Desktop\Term Project\Web-II_Inventory_Management\MultiTenant_Inventory_Management\MultiTenant_Inventory_Management\obj\Debug\net5.0\Razor\Views\Products\Index.cshtml.g.cs
+D:\Storages\Desktop\Term Project\Web-II_Inventory_Management\MultiTenant_Inventory_Management\MultiTenant_Inventory_Management\obj\Debug\net5.0\Razor\Views\Products\Details.cshtml.g.cs
+D:\Storages\Desktop\Term Project\Web-II_Inventory_Management\MultiTenant_Inventory_Management\MultiTenant_Inventory_Management\obj\Debug\net5.0\Razor\Views\Products\Edit.cshtml.g.cs
+D:\Storages\Desktop\Term Project\Web-II_Inventory_Management\MultiTenant_Inventory_Management\MultiTenant_Inventory_Management\obj\Debug\net5.0\Razor\Views\Products\Delete.cshtml.g.cs
+D:\Storages\Desktop\Term Project\Web-II_Inventory_Management\MultiTenant_Inventory_Management\MultiTenant_Inventory_Management\obj\Debug\net5.0\Razor\Views\_Blank_Layout.cshtml.g.cs

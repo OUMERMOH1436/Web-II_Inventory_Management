@@ -1,13 +1,14 @@
 ﻿@model IEnumerable<MultiTenant_Inventory_Management.Models.Inventory.Tenant>
 
 @{
-    ViewData["Title"] = "Index";
+    Layout = "~/Views/_Blank_Layout.cshtml";
 }
 
-<h1>Index</h1>
-
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" asp-controller="Tenants"
+       class="btn btn-success btn-rounded waves-effect waves-light mb-2 mr-2">
+        <i class="mdi mdi-plus mr-1"></i> Create New Tenant
+    </a>
 </p>
 <table class="table">
     <thead>
@@ -32,27 +33,37 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.TenantName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Industry)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BusinessLocation)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Logo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IsTenantActive)
-            </td>
-            <td>
-                <a asp-action="Details" asp-route-id="@item.TenantId">Access</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TenantName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Industry)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BusinessLocation)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Logo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsTenantActive)
+                </td>
+                <td>
+                    <div class="text-sm-right">
+                        <a asp-action="Details" asp-route-id="@item.TenantId" 
+                           class="btn btn-success btn-rounded waves-effect waves-light mb-2 mr-2">
+                            <i class="mdi mdi-forward mr-1"></i> Access 
+                        </a>
+                    </div>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

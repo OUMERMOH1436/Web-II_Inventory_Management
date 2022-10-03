@@ -1,0 +1,105 @@
+﻿@model MultiTenant_Inventory_Management.Models.Inventory.Product
+
+@{
+    ViewBag.Title = "Product Detail";
+    ViewBag.pTitle = "Product Detail";
+    ViewBag.pageTitle = "Inventory";
+}
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-xl-6">
+                        <div class="mt-4 mt-xl-3">
+                            <a href="#" class="text-primary">@Html.DisplayFor(model => model.PartNumber)</a>
+                            <h4 class="mt-1 mb-3">@Html.DisplayFor(model => model.Name)</h4>
+
+                            <h5 class="mb-4"> Price : <b>@Html.DisplayFor(model => model.SellingPrice)</b></h5>
+                            <p class="text-muted mb-4">@Html.DisplayNameFor(model => model.Description):- @Html.DisplayFor(model => model.Description)</p>
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <div>
+                                        <p class="text-muted"><i class="bx font-size-16 align-middle text-primary mr-1"></i> @Html.DisplayNameFor(model => model.CostPrice) : @Html.DisplayFor(model => model.CostPrice)</p>
+                                        <p class="text-muted"><i class="bx font-size-16 align-middle text-primary mr-1"></i> @Html.DisplayNameFor(model => model.isActive) : @Html.DisplayFor(model => model.isActive)</p>
+                                        <p class="text-muted"><i class="bx font-size-16 align-middle text-primary mr-1"></i> @Html.DisplayNameFor(model => model.SKU) : @Html.DisplayFor(model => model.SKU)</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div>
+                                        <p class="text-muted"><i class="bx font-size-16 align-middle text-primary mr-1"></i> @Html.DisplayNameFor(model => model.ISBN) : @Html.DisplayFor(model => model.ISBN)</p>
+                                        <p class="text-muted"><i class="bx font-size-16 align-middle text-primary mr-1"></i> @Html.DisplayNameFor(model => model.Unit) : @Html.DisplayFor(model => model.Unit)</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="text-center">
+                            <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-primary waves-effect waves-light mt-2 mr-1">
+                                <i class="bx bx-edit mr-2"></i> Edit Product
+                            </a>
+                            <a asp-action="Index" class="btn btn-success waves-effect  mt-2 waves-light">
+                                <i class="bx bx-arrow-back mr-2"></i>Back to List
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-6">
+                        <div class="mt-4 mt-xl-3">
+                            <h5 class="mb-3">More Informations :</h5>
+                            <div class="table-responsive">
+                                <table class="table mb-0 table-bordered">
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row" style="width: 200px;">
+                                                @Html.DisplayNameFor(model => model.PartNumber)
+                                            </th>
+                                            <td style="width: 200px;">
+                                                @Html.DisplayFor(model => model.PartNumber)
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">
+                                                @Html.DisplayNameFor(model => model.Name)
+                                            </th>
+                                            <td>@Html.DisplayFor(model => model.Name)</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">
+                                                @Html.DisplayNameFor(model => model.Category)
+                                            </th>
+                                            <td>@Html.DisplayFor(model => model.Category.Name)</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">
+                                                @Html.DisplayNameFor(model => model.Brand)
+                                            </th>
+                                            <td>@Html.DisplayFor(model => model.Brand.BrandName)</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">
+                                                @Html.DisplayNameFor(model => model.Tax)
+                                            </th>
+                                            <td>
+                                                @Html.DisplayFor(model => model.ProductTax.TaxRate)%
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end Specifications -->
+                </div>
+                <!-- end row -->
+
+            </div>
+        </div>
+        <!-- end card -->
+    </div>
+</div>
+<!-- end row -->
+<!-- end row -->
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

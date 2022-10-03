@@ -133,6 +133,24 @@ namespace MultiTenant_Inventory_Management.Migrations.BusinessDb
                     b.ToTable("Brand");
                 });
 
+            modelBuilder.Entity("MultiTenant_Inventory_Management.Models.Inventory.Category", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Category");
+                });
+
             modelBuilder.Entity("MultiTenant_Inventory_Management.Models.Inventory.Product", b =>
                 {
                     b.Property<int>("Id")
@@ -143,16 +161,24 @@ namespace MultiTenant_Inventory_Management.Migrations.BusinessDb
                     b.Property<int>("BrandId")
                         .HasColumnType("int");
 
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("int");
+
                     b.Property<float>("CostPrice")
                         .HasColumnType("real");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ISBN")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PartNumber")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<byte[]>("ProductImage")
@@ -179,9 +205,14 @@ namespace MultiTenant_Inventory_Management.Migrations.BusinessDb
                     b.Property<string>("Unit")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool>("isActive")
+                        .HasColumnType("bit");
+
                     b.HasKey("Id");
 
                     b.HasIndex("BrandId");
+
+                    b.HasIndex("CategoryId");
 
                     b.HasIndex("SalesTax");
 
@@ -306,6 +337,12 @@ namespace MultiTenant_Inventory_Management.Migrations.BusinessDb
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("MultiTenant_Inventory_Management.Models.Inventory.Category", "Category")
+                        .WithMany()
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("MultiTenant_Inventory_Management.Models.Inventory.ProductTax", "ProductTax")
                         .WithMany()
                         .HasForeignKey("SalesTax")
@@ -319,6 +356,8 @@ namespace MultiTenant_Inventory_Management.Migrations.BusinessDb
                         .IsRequired();
 
                     b.Navigation("Brand");
+
+                    b.Navigation("Category");
 
                     b.Navigation("ProductTax");
 

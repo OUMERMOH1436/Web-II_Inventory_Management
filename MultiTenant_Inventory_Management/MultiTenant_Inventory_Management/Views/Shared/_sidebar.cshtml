@@ -21,50 +21,47 @@
                         <span key="t-inventory">Inventory</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="javascript: void(0);" key="t-items">Items</a></li>
-                        <li><a href="javascript: void(0);" key="t-item-groups">Item Groups</a></li>
+                        <li><a href="@Url.Action("Index","Products")" key="t-items">Products</a></li>
+                        <li><a href="@Url.Action("Create","Products")" key="t-item-groups">Create Product</a></li>
                         <li><a href="javascript: void(0);" key="t-inventory-adjustments">Inventory Adjustments</a></li>
 
                     </ul>
                 </li>
-
-                <li class="menu-title" key="t-apps">Apps</li>
-
-
-
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="bx bx-store"></i>
+                        <i class="bx bx-info-circle"></i>
+                        <span key="t-merchandise">Merchandise</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a href="javascript: void(0);" key="t-vendors">Brand</a></li>
+                        <li><a href="javascript: void(0);" key="t-purchase-orders">Category</a></li>
+                    </ul>
+                </li>
+
+                <li class="menu-title" key="t-apps">Apps</li>
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="bx bx-cart"></i>
                         <span key="t-sales">Sales</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
                         <li><a href="javascript: void(0);" key="t-customers">Customers</a></li>
-                        <li><a href="javascript: void(0);" key="t-Sales-orders">Sales Orders</a></li>
-                        <li><a href="javascript: void(0);" key="t-packages">Packages</a></li>
+                        <li><a href="javascript: void(0);" key="t-Sales-orders">Sales Order</a></li>
                         <li><a href="javascript: void(0);" key="t-invoices">Invoices</a></li>
-                        <li><a href="javascript: void(0);" key="t-payments-recieved">Payments Recieved</a></li>
-                        <li><a href="javascript: void(0);" key="t-sales-return">Sales Return</a></li>
-                        <li><a href="javascript: void(0);" key="t-credit-notes">Credit Notes</a></li>
                     </ul>
                 </li>
 
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="bx bx-bitcoin"></i>
+                        <i class="bx bx-purchase-tag"></i>
                         <span key="t-purchases">Purchases</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
                         <li><a href="javascript: void(0);" key="t-vendors">Vendors</a></li>
-                        <li><a href="javascript: void(0);" key="t-purchase-orders">Purchase Orders</a></li>
-                        <li><a href="javascript: void(0);" key="t-bills">Bills</a></li>
-                        <li><a href="javascript: void(0);" key="t-Payments-made">Payments Made</a></li>
-                        <li><a href="javascript: void(0);" key="t-vendor-credit">Vendor Credit</a></li>
-
+                        <li><a href="javascript: void(0);" key="t-purchase-orders">Purchase Order</a></li>
+                        <li><a href="javascript: void(0);" key="t-bills">Bill</a></li>
                     </ul>
                 </li>
-
-
-
             </ul>
         </div>
         <!-- Sidebar -->

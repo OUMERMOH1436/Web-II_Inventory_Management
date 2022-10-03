@@ -41,6 +41,7 @@ namespace MultiTenant_Inventory_Management.Data
         public DbSet<Product> Products { get; set; }
         public DbSet<Brand> Brand { get; set; }
         public DbSet<ProductTax> ProductTax { get; set; }
+        public DbSet<Category> Category { get; set; }
 
         // this is part where we define the global query filter for DBContext.
         // Everytime a new request is passed to the Dbcontext,

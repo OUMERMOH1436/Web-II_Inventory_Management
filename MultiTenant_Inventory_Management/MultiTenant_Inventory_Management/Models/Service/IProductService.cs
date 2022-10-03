@@ -9,8 +9,9 @@ namespace MultiTenant_Inventory_Management.Models.Service
     public interface IProductService
     {
         Task<Product> CreateAsync(Product product);
-        Task<Product> GetByIdAsync(int id);
+        Product GetByIdAsync(int id);
         Task<IEnumerable<Product>> GetAllAsync();
         Task<Product> DeleteByIdAsync(int id);
+        Task<Product> UpdateAsync(Product product);
     }
 }

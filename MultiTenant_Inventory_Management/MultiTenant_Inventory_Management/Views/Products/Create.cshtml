@@ -1,0 +1,122 @@
+﻿@model MultiTenant_Inventory_Management.Models.Inventory.Product
+
+@{
+    ViewData["Title"] = "Add Product";
+    ViewBag.pTitle = "Add Product";
+    ViewBag.pageTitle = "Inventory";
+}
+
+<!-- select2 css -->
+<link href="~/assets/libs/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
+
+<!-- dropzone css -->
+<link href="~/assets/libs/dropzone/min/dropzone.min.css" rel="stylesheet" type="text/css" />
+
+
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="row mb-2">
+                    <div class="col-sm-4">
+                        <div class=" mr-2 mb-2 d-inline-block">
+                            <div class="position-relative">
+                                <h4 class="card-title">Basic Information</h4>
+                                <p class="card-title-desc">Fill all information below</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-8">
+                        <div class="text-sm-right">
+                            <a asp-action="Index" class="btn btn-success btn-rounded waves-effect waves-light mb-2 mr-2"><i class="mdi mdi-keyboard-return mr-1"></i> Products </a>
+                        </div>
+                    </div><!-- end col-->
+
+                </div>
+                <form asp-action="Create">
+                    <div class="row">
+
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label asp-for="PartNumber" class="control-label">Part Number</label>
+                                <input asp-for="PartNumber" class="form-control" />
+                                <span asp-validation-for="PartNumber" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Name" class="control-label">Product Name</label>
+                                <input asp-for="Name" class="form-control" />
+                                <span asp-validation-for="Name" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="SKU" class="control-label"></label>
+                                <input asp-for="SKU" class="form-control" />
+                                <span asp-validation-for="SKU" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="SellingPrice" class="control-label"></label>
+                                <input asp-for="SellingPrice" class="form-control" />
+                                <span asp-validation-for="SellingPrice" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="SalesTax" class="control-label"></label>
+                                <select asp-for="SalesTax" class="form-control" asp-items="ViewBag.SalesTax"></select>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="CostPrice" class="control-label"></label>
+                                <input asp-for="CostPrice" class="form-control" />
+                                <span asp-validation-for="CostPrice" class="text-danger"></span>
+                            </div>
+                            <div class="form-group form-check">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" asp-for="ReturnableItem" /> @Html.DisplayNameFor(model => model.ReturnableItem)
+                                </label>
+                            </div>
+                            <div class="form-group form-check">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" asp-for="isActive" /> @Html.DisplayNameFor(model => model.isActive)
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label asp-for="ISBN" class="control-label"></label>
+                                <input asp-for="ISBN" class="form-control" />
+                                <span asp-validation-for="ISBN" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="CategoryId" class="control-label"></label>
+                                <select asp-for="CategoryId" class="form-control" asp-items="ViewBag.CategoryId"></select>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="BrandId" class="control-label"></label>
+                                <select asp-for="BrandId" class="form-control" asp-items="ViewBag.BrandId"></select>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Unit" class="control-label"></label>
+                                <input asp-for="Unit" class="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Description" class="control-label">Product Description</label>
+                                <textarea asp-for="Description" class="form-control" rows="5"></textarea>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="submit" value="Create" class="btn btn-primary mr-1 waves-effect waves-light" />
+                    </div>
+                    <!--<button type="submit" class="btn btn-secondary waves-effect">Cancel</button>-->
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
