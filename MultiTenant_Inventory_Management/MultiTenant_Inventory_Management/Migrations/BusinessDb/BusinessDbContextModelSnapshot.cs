@@ -151,6 +151,40 @@ namespace MultiTenant_Inventory_Management.Migrations.BusinessDb
                     b.ToTable("Category");
                 });
 
+            modelBuilder.Entity("MultiTenant_Inventory_Management.Models.Inventory.Customer", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Company")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CustomerName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Receivables")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("TenantId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("WorkPhone")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TenantId");
+
+                    b.ToTable("Customer");
+                });
+
             modelBuilder.Entity("MultiTenant_Inventory_Management.Models.Inventory.Product", b =>
                 {
                     b.Property<int>("Id")
@@ -318,7 +352,52 @@ namespace MultiTenant_Inventory_Management.Migrations.BusinessDb
                     b.ToTable("Tenant");
                 });
 
+            modelBuilder.Entity("MultiTenant_Inventory_Management.Models.Inventory.Vendor", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Company")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Payables")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("TenantId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("VendorName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("WorkPhone")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TenantId");
+
+                    b.ToTable("Vendor");
+                });
+
             modelBuilder.Entity("MultiTenant_Inventory_Management.Models.Inventory.Brand", b =>
+                {
+                    b.HasOne("MultiTenant_Inventory_Management.Models.Inventory.Tenant", "Tenants")
+                        .WithMany()
+                        .HasForeignKey("TenantId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Tenants");
+                });
+
+            modelBuilder.Entity("MultiTenant_Inventory_Management.Models.Inventory.Customer", b =>
                 {
                     b.HasOne("MultiTenant_Inventory_Management.Models.Inventory.Tenant", "Tenants")
                         .WithMany()
@@ -384,6 +463,17 @@ namespace MultiTenant_Inventory_Management.Migrations.BusinessDb
                         .IsRequired();
 
                     b.Navigation("SaasUsers");
+                });
+
+            modelBuilder.Entity("MultiTenant_Inventory_Management.Models.Inventory.Vendor", b =>
+                {
+                    b.HasOne("MultiTenant_Inventory_Management.Models.Inventory.Tenant", "Tenants")
+                        .WithMany()
+                        .HasForeignKey("TenantId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Tenants");
                 });
 #pragma warning restore 612, 618
         }

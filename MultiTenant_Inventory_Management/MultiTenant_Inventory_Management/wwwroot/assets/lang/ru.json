@@ -1,7 +1,7 @@
 {
-  "head": {
-    "title": "Панель инструментов | Skote - Отзывчивый Bootstrap 4 Admin Dashboard"
-  },
+ // "head": {
+ //   "title": "Панель инструментов | Skote - Отзывчивый Bootstrap 4 Admin Dashboard"
+ // },
   ".metismenu": {
     "t-menu": "Меню",
     "t-apps": "Программы",   

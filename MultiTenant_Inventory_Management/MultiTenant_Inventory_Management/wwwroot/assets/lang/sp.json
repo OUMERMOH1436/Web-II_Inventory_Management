@@ -1,7 +1,7 @@
 {
-  "head": {
-    "title": "Tablero de instrumentos | Skote: panel de administración de Bootstrap 4 receptivo"
-  },
+//  "head": {
+//    "title": "Tablero de instrumentos | Skote: panel de administración de Bootstrap 4 receptivo"
+//  },
   ".metismenu": {
     "t-menu": "Menú",
     "t-apps": "Aplicaciones",   

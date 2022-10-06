@@ -42,6 +42,8 @@ namespace MultiTenant_Inventory_Management.Data
         public DbSet<Brand> Brand { get; set; }
         public DbSet<ProductTax> ProductTax { get; set; }
         public DbSet<Category> Category { get; set; }
+        public DbSet<Customer> Customer { get; set; }
+        public DbSet<Vendor> Vendor { get; set; }
 
         // this is part where we define the global query filter for DBContext.
         // Everytime a new request is passed to the Dbcontext,
@@ -55,6 +57,8 @@ namespace MultiTenant_Inventory_Management.Data
             modelBuilder.Entity<Product>().HasQueryFilter(a => a.TenantId == TenantId);
             modelBuilder.Entity<Brand>().HasQueryFilter(a => a.TenantId == TenantId);
             modelBuilder.Entity<ProductTax>().HasQueryFilter(a => a.TenantId == TenantId);
+            modelBuilder.Entity<Customer>().HasQueryFilter(a => a.TenantId == TenantId);
+            modelBuilder.Entity<Vendor>().HasQueryFilter(a => a.TenantId == TenantId);
         }
 
         // Here, everytime a new instance of BusinessDbContext is invoked, the connection string is pulled 
@@ -90,6 +94,23 @@ namespace MultiTenant_Inventory_Management.Data
                 }
             }
             var result = await base.SaveChangesAsync(cancellationToken);
+            return result;
+        }
+        public override int SaveChanges()
+        {
+            foreach (var entry in ChangeTracker.Entries<IMustHaveTenant>().ToList())
+            {
+                switch (entry.State)
+                {
+                    case EntityState.Added:
+                    case EntityState.Modified:
+                    case EntityState.Deleted:
+                        entry.Entity.TenantId = TenantId;
+                        break;
+
+                }
+            }
+            var result = base.SaveChanges();
             return result;
         }
     }

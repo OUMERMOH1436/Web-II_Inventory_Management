@@ -1,0 +1,65 @@
+﻿@model MultiTenant_Inventory_Management.Models.Inventory.Customer
+
+@{
+    ViewBag.Title = "Create";
+    ViewBag.pTitle = "Create";
+    ViewBag.pageTitle = "Customers";
+}
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="row mb-2">
+                    <div class="col-sm-8">
+                        <div class="text-sm-left">
+                            <a asp-action="Index" class="btn btn-success btn-rounded waves-effect waves-light mb-2 mr-2"><i class="mdi mdi-keyboard-return mr-1"></i>Customers</a>
+                        </div>
+                    </div>
+                </div>
+                <form asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="row">
+
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label asp-for="CustomerName" class="control-label"></label>
+                                <input asp-for="CustomerName" class="form-control" />
+                                <span asp-validation-for="CustomerName" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Company" class="control-label"></label>
+                                <input asp-for="Company" class="form-control" />
+                                <span asp-validation-for="Company" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Email" class="control-label"></label>
+                                <input asp-for="Email" class="form-control" />
+                                <span asp-validation-for="Email" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label asp-for="WorkPhone" class="control-label"></label>
+                                <input asp-for="WorkPhone" class="form-control" />
+                                <span asp-validation-for="WorkPhone" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Receivables" class="control-label"></label>
+                                <input asp-for="Receivables" class="form-control" />
+                                <span asp-validation-for="Receivables" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Create" class="btn btn-primary" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

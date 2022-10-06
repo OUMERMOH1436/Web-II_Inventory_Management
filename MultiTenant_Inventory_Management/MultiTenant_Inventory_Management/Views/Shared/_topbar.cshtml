@@ -3,21 +3,22 @@
         <div class="d-flex">
             <!-- LOGO -->
             <div class="navbar-brand-box">
-                <a href=@Url.Action("Index", "index") class="logo logo-dark">
+                <a asp-controller="Dashboard" asp-action="Index" class="logo logo-dark">
                     <span class="logo-sm">
-                        <img src="~/assets/images/logo.svg" alt="" height="22">
+                        <img src="~/assets/images/saas.png" alt="" height="49" width="50">
                     </span>
                     <span class="logo-lg">
-                        <img src="~/assets/images/logo-dark.png" alt="" height="17">
+                        <img src="~/assets/images/saas.png" alt="" height="49" width="50">
                     </span>
                 </a>
 
-                <a href=@Url.Action("Index", "index") class="logo logo-light">
+
+                <a asp-controller="Dashboard" asp-action="Index" class="logo logo-light">
                     <span class="logo-sm">
-                        <img src="~/assets/images/logo-light.svg" alt="" height="22">
+                        <img src="~/assets/images/saas.png" alt="" height="49" width="50">
                     </span>
                     <span class="logo-lg">
-                        <img src="~/assets/images/logo-light.png" alt="" height="19">
+                        <img src="~/assets/images/saas.png" alt="" height="49" width="50">
                     </span>
                 </a>
             </div>
@@ -28,7 +29,7 @@
 
             <div class="dropdown dropdown-mega d-none d-lg-block ml-2">
                 <button type="button" class="btn header-item waves-effect" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
-                    <span key="t-megamenu">Quick Create</span>
+                    <span key="t-megame">Quick Create</span>
                     <i class="mdi mdi-chevron-down"></i>
                 </button>
                 <div class="dropdown-menu dropdown-megamenu">
@@ -40,13 +41,10 @@
                                     <h5 class="font-size-14 mt-0" key="t-general">GENERAL</h5>
                                     <ul class="list-unstyled megamenu-list">
                                         <li>
-                                            <a href="javascript:void(0);" key="t-add-user">Add Users</a>
+                                            <a href="@Url.Action("Create","Products")" key="t-add-product">Create Product</a>
                                         </li>
                                         <li>
-                                            <a href="javascript:void(0);" key="t-item">Item</a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0);" key="t-item-group">Item Group</a>
+                                            <a href="@Url.Action("Index","Products")" key="t-item">List Products</a>
                                         </li>
                                         <li>
                                             <a href="javascript:void(0);" key="t-inventory-adjustments">Inventory Adjustement</a>
@@ -59,22 +57,13 @@
                                     <h5 class="font-size-14 mt-0" key="t-sales">SALES</h5>
                                     <ul class="list-unstyled megamenu-list">
                                         <li>
-                                            <a href="javascript:void(0);" key="t-customer">Customer</a>
+                                            <a href="@Url.Action("Index","Customers")" key="t-customer">Customer</a>
                                         </li>
                                         <li>
-                                            <a href="javascript:void(0);" key="t-invoices">Invoices</a>
+                                            <a href="@Url.Action("Create","Customers")" key="t-invoices">Add Customer</a>
                                         </li>
                                         <li>
                                             <a href="javascript:void(0);" key="t-sales-orders">Sales Order</a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0);" key="t-packages">Packages</a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0);" key="t-customer-payment">Customer Payment</a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0);" key="t-credit-notes">Credit Notes</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -83,19 +72,13 @@
                                     <h5 class="font-size-14 mt-0" key="t-purchases">PURCHASES</h5>
                                     <ul class="list-unstyled megamenu-list">
                                         <li>
-                                            <a href="javascript:void(0);" key="t-vendor">Vendor</a>
+                                            <a href="@Url.Action("Index","Vendors")" key="t-vendor">Vendor</a>
                                         </li>
                                         <li>
-                                            <a href="javascript:void(0);" key="t-bills">Bills</a>
+                                            <a href="@Url.Action("Create","Vendors")" key="t-add-vendor">Add Vendor</a>
                                         </li>
                                         <li>
                                             <a href="javascript:void(0);" key="t-purchase-orders">Purchase Orders</a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0);" key="t-vendor-payment">Vendor Payment</a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0);" key="t-vendor-credit">Vendor Credit</a>
                                         </li>
 
                                     </ul>
@@ -122,26 +105,6 @@
 
         <div class="d-flex">
 
-            <div class="dropdown d-inline-block d-lg-none ml-2">
-                <button type="button" class="btn header-item noti-icon waves-effect" id="page-header-search-dropdown"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="mdi mdi-magnify"></i>
-                </button>
-                <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right p-0"
-                     aria-labelledby="page-header-search-dropdown">
-
-                    <form class="p-3">
-                        <div class="form-group m-0">
-                            <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Search ..." aria-label="Recipient's username">
-                                <div class="input-group-append">
-                                    <button class="btn btn-primary" type="submit"><i class="mdi mdi-magnify"></i></button>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
 
             <div class="dropdown d-inline-block">
                 <button type="button" class="btn header-item waves-effect"
@@ -179,59 +142,23 @@
                     </a>
                 </div>
             </div>
-
-            <div class="dropdown d-none d-lg-inline-block ml-1">
-                <button type="button" class="btn header-item noti-icon waves-effect"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="bx bx-customize"></i>
-                </button>
-            </div>
-
             <div class="dropdown d-none d-lg-inline-block ml-1">
                 <button type="button" class="btn header-item noti-icon waves-effect" data-toggle="fullscreen">
                     <i class="bx bx-fullscreen"></i>
                 </button>
             </div>
-
-            <div class="dropdown d-inline-block">
-                <button type="button" class="btn header-item noti-icon waves-effect" id="page-header-notifications-dropdown"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="bx bx-bell bx-tada"></i>
-                    <span class="badge badge-danger badge-pill">3</span>
-                </button>
-                <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right p-0"
-                     aria-labelledby="page-header-notifications-dropdown">
-                    <div class="p-3">
-                        <div class="row align-items-center">
-                            <div class="col">
-                                <h6 class="m-0" key="t-notifications"> Notifications </h6>
-                            </div>
-                            <div class="col-auto">
-                                <a href="#!" class="small" key="t-view-all"> View All</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="p-2 border-top">
-                        <a class="btn btn-sm btn-link font-size-14 btn-block text-center" href="javascript:void(0)">
-                            <i class="mdi mdi-arrow-right-circle mr-1"></i> View More..
-                        </a>
-                    </div>
-                </div>
-            </div>
-
             <div class="dropdown d-inline-block">
                 <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <img class="rounded-circle header-profile-user" src="~/assets/images/users/Oumer.jpg" asp-append-version="true"
+                    <img class="rounded-circle header-profile-user" src="~/assets/images/saas2.png" asp-append-version="true"
                          alt="Header Avatar">
-                    <span class="d-none d-xl-inline-block ml-1" key="t-oumer">Oumer</span>
+                    <span class="d-none d-xl-inline-block ml-1" key="t-oumer">@User.Identity.Name</span>
                     <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
                 </button>
                 <div class="dropdown-menu dropdown-menu-right">
                     <!-- item-->
                     <a class="dropdown-item" href="#"><i class="bx bx-user font-size-16 align-middle mr-1"></i> <span key="t-profile">Profile</span></a>
-                    <a class="dropdown-item" href="#"><i class="bx bx-wallet font-size-16 align-middle mr-1"></i> <span key="t-my-wallet">My Wallet</span></a>
+                    <a class="dropdown-item" href="@Url.Action("Index","AvailableTenant")"><i class="bx bx-wallet font-size-16 align-middle mr-1"></i> <span key="t-my-walle">Tenant Protal</span></a>
                     <a class="dropdown-item d-block" href="#"><span class="badge badge-success float-right">11</span><i class="bx bx-wrench font-size-16 align-middle mr-1"></i> <span key="t-settings">Settings</span></a>
                     <a class="dropdown-item" href="#" ><i class="bx bx-lock-open font-size-16 align-middle mr-1"></i> <span key="t-lock-screen">Lock screen</span></a>
                     
@@ -247,11 +174,6 @@
 </div>
             </div>
 
-            <div class="dropdown d-inline-block">
-                <button type="button" class="btn header-item noti-icon right-bar-toggle waves-effect">
-                    <i class="bx bx-cog bx-spin"></i>
-                </button>
-            </div>
 
         </div>
     </div>

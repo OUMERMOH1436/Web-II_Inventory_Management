@@ -1,7 +1,7 @@
 {
-  "head": {
-    "title": "Dashboard | Skote - Responsive Bootstrap 4 Admin Dashboard"
-  },
+  //"head": {
+ //   "title": "Dashboard | Skote - Responsive Bootstrap 4 Admin Dashboard"
+ // },
   ".metismenu": {
     "t-menu": "Menu",    
     "t-apps": "Apps",   
@@ -135,7 +135,7 @@
     "t-extra-pages": "Extra Pages"
   },
   ".dropdown-mega": {
-    "t-megamenu": "Mega Menu"
+    "t-megamenu": "Quick Create"
   },
   ".col": {
     "t-notifications": "Notifications"

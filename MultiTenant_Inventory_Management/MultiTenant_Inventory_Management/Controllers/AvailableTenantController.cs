@@ -66,7 +66,7 @@ namespace MultiTenant_Inventory_Management.Controllers
             {
                 Console.WriteLine("Error Writing app settings");
             }
-            return RedirectToAction("Index", "Products");
+            return RedirectToAction("Index", "Dashboard");
         }
 
         // GET: AvailableTenantController/Create

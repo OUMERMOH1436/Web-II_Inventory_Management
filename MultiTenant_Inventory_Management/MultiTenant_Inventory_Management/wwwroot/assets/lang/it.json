@@ -1,7 +1,7 @@
 {
-  "head": {
-    "title": "Cruscotto | Skote - Dashboard di amministrazione Responsive Bootstrap 4"
-  },
+//  "head": {
+//    "title": "Cruscotto | Skote - Dashboard di amministrazione Responsive Bootstrap 4"
+//  },
   ".metismenu": {
     "t-menu": "Menù",
     "t-apps": "applicazioni",   

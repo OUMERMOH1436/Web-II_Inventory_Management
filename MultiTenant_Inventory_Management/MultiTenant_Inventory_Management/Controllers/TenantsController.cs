@@ -56,6 +56,7 @@ namespace MultiTenant_Inventory_Management.Controllers
             TenantAndUser tenantAndUser = new TenantAndUser();
             try
             {
+                tenant.UserId = userId;
                 _context.Tenants.Add(tenant);
                 _context.SaveChanges();
                 _context.Entry(tenant).GetDatabaseValues();

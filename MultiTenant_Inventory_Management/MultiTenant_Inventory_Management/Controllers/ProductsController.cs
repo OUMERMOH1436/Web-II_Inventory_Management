@@ -54,8 +54,6 @@ namespace MultiTenant_Inventory_Management.Controllers
         // GET: ProductsController/Create
         public ActionResult Create()
         {
-            int tenantId = getTenant();
-
             List<ProductTax> productTax = _context.ProductTax.ToList();
             List<SelectListItem> SalesTax = new List<SelectListItem>();
                 foreach (var tax in productTax)
@@ -165,7 +163,6 @@ namespace MultiTenant_Inventory_Management.Controllers
                 return View();
             }
         }
-
         // GET: ProductsController/Delete/{id}
         public ActionResult Delete(int id)
         {
